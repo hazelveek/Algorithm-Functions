@@ -13,7 +13,6 @@ function reverseInt(n){
         newNumber = (newNumber * 10) + remainder
       }
       result = Math.floor(result/divisor)
-      console.log({newNumber, remainder, result, divisor});
     }
     return newNumber;
 }
