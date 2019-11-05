@@ -21,10 +21,10 @@ function moveZeroes(arr) {
 };
 
 /**
- * Second Attempt (prefered)
+ * Second Attempt(Splicing an array can be expensive when the array gets large.)
  * @param {array} arr 
  */
-function moveZeroes(arr) {
+function moveZeroes2(arr) {
     let start = 0;
     let end = arr.length - 1;
     while(start < end){
@@ -34,6 +34,29 @@ function moveZeroes(arr) {
             end--;
         }else{
             start++;
+        }
+    }
+};
+
+/**
+ * Third Attempt (Moving the non-zeroes forward) : Accepted Solution
+ * @param {array} arr
+ */
+function moveZeroes3(arr) {
+    let i = 0;
+    let j = i + 1;
+    let end = arr.length;
+    let x,y;
+    for(i,j; j < end; j++){
+        x = arr[i];
+        y = arr[j];
+        if(x == 0 && y != 0){
+          arr[i] = y;
+          arr[j] = 0;
+          i++;
+        }
+        if(x != 0){
+            i++;
         }
     }
 };
